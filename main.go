@@ -217,7 +217,7 @@ func readAuthResponse(r *http.Request) (UserData, error) {
 		return user, err
 	}
 
-	return user, err
+	return user, nil
 }
 
 //Reads message data and returns it in a struct
@@ -236,7 +236,7 @@ func readMsgResponse(r *http.Request) (UserMessage, error) {
 		return user, err
 	}
 
-	return user, err
+	return user, nil
 }
 
 //Checks if login exists in DB
@@ -249,7 +249,7 @@ func checkLoginExists(login string) (bool, error) {
 		return ifExists, err
 	}
 
-	return ifExists, err
+	return ifExists, nil
 }
 
 //Checks the ID of login in DB
@@ -261,5 +261,5 @@ func checkLoginID(login string) (int64, error) {
 		fmt.Println(err)
 		return id, err
 	}
-	return id, err
+	return id, nil
 }
